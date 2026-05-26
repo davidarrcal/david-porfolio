@@ -1,43 +1,56 @@
-# Astro Starter Kit: Minimal
+# David Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Mi portfolio personal, construido con Astro, React y Tailwind CSS, desplegado en Cloudflare.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- **Astro 6** - Framework meta para contenido enfocado en la web
+- **React 19** - Libreria de UI para componentes interactivos
+- **Tailwind CSS 4** - Framework CSS utility-first
+- **Cloudflare Pages/Workers** - Hosting y edge computing
+- **TypeScript** - Tipado estatico
 
-Inside of your Astro project, you'll see the following folders and files:
+## Estructura del proyecto
 
 ```text
 /
-├── public/
+├── public/             # Archivos estaticos (favicon, imagenes, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/     # Componentes reutilizables (Astro/React)
+│   ├── layouts/        # Layouts de pagina
+│   ├── pages/          # Rutas del sitio (file-based routing)
+│   └── styles/         # Estilos globales
+├── astro.config.mjs    # Configuracion de Astro
+├── tsconfig.json       # Configuracion de TypeScript
+├── wrangler.jsonc      # Configuracion de Cloudflare Workers
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Comandos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Comando                  | Accion                                          |
+| :----------------------- | :---------------------------------------------- |
+| `npm install`            | Instalar dependencias                           |
+| `npm run dev`            | Servidor de desarrollo en `localhost:4321`       |
+| `npm run build`          | Construir sitio de produccion en `./dist/`      |
+| `npm run preview`        | Previsualizar la build localmente               |
+| `npm run generate-types` | Generar tipos de Cloudflare Workers             |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Desarrollo
 
-## 🧞 Commands
+1. Clonar el repositorio
+2. Ejecutar `npm install`
+3. Ejecutar `npm run dev`
+4. Abrir `http://localhost:4321`
 
-All commands are run from the root of the project, from a terminal:
+## Despliegue
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+El proyecto esta configurado para desplegarse en Cloudflare usando el adapter `@astrojs/cloudflare`. La configuracion se encuentra en `wrangler.jsonc`.
 
-## 👀 Want to learn more?
+## Convenciones
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Las paginas van en `src/pages/` con extension `.astro`
+- Los componentes interactivos usan React (`.tsx`)
+- Los componentes estaticos usan Astro (`.astro`)
+- Los estilos globales se importan desde `src/styles/global.css`
+- Los recursos estaticos van en `public/`

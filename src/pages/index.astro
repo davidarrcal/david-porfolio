@@ -1,17 +1,61 @@
 ---
-
+import BaseLayout from '../layouts/base-layout.astro';
+import GradientBlinds from '../components/GradientBlinds.tsx';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="David | Portfolio">
+  <div class="fixed inset-0 -z-10">
+    <GradientBlinds
+      client:load
+      gradientColors={['#0f0c29', '#302b63', '#24243e']}
+      angle={135}
+      noise={0.15}
+      blindCount={24}
+      spotlightRadius={0.6}
+      spotlightSoftness={0.8}
+      spotlightOpacity={0.5}
+      mirrorGradient={true}
+      distortAmount={0.15}
+      shineDirection="right"
+      mixBlendMode="normal"
+    />
+  </div>
+
+  <section id="inicio" class="min-h-screen flex items-center justify-center">
+    <div class="text-center px-6">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">
+        Hola, soy <span class="text-blue-400">David</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 max-w-xl mx-auto">
+        Desarrollador web apasionado por crear experiencias digitales modernas y funcionales.
+      </p>
+    </div>
+  </section>
+
+  <section id="sobre-mi" class="min-h-screen flex items-center justify-center">
+    <div class="text-center px-6 max-w-2xl">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Sobre mí</h2>
+      <p class="text-gray-300 text-lg">
+        Aquí irá la información sobre mí.
+      </p>
+    </div>
+  </section>
+
+  <section id="proyectos" class="min-h-screen flex items-center justify-center">
+    <div class="text-center px-6 max-w-2xl">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Proyectos</h2>
+      <p class="text-gray-300 text-lg">
+        Aquí irán los proyectos.
+      </p>
+    </div>
+  </section>
+
+  <section id="contacto" class="min-h-screen flex items-center justify-center">
+    <div class="text-center px-6 max-w-2xl">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Contacto</h2>
+      <p class="text-gray-300 text-lg">
+        Aquí irá el formulario de contacto.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
