@@ -22,6 +22,10 @@ export const skills = [
   { name: 'Docker', category: 'devops' },
   { name: 'Linux', category: 'tool' },
   { name: 'Python', category: 'language' },
+  { name: 'Bootstrap', category: 'frontend' },
+  { name: 'Kubernetes', category: 'devops' },
+  { name: 'Java', category: 'language' },
+  { name: 'Astro', category: 'frontend' }
 ];
 
 export type Project = {

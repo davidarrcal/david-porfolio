@@ -62,10 +62,13 @@ export default function NavBar() {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${navBg}`}>
       <div className="mx-auto max-w-5xl flex items-center justify-between px-6 py-4">
         <a href="#inicio" className={`flex items-center gap-3 font-bold tracking-tight ${textColor}`}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-violet-400/30 bg-violet-500/10 text-violet-200 text-sm font-bold shadow-[0_0_12px_rgba(139,92,246,0.2)] transition-transform duration-200 hover:rotate-6">
+          <span 
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-violet-400/30 text-white text-sm font-bold shadow-[0_0_12px_rgba(139,92,246,0.2)] transition-transform duration-200 hover:scale-110"
+            style={{ backgroundImage: 'linear-gradient(135deg, #8B5CF6, #EC4899)' }}
+          >
             D
           </span>
-          <span className="hidden sm:inline">David</span>
+          <span className="hidden sm:inline">David Arredondo Calderón</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-1">
@@ -75,10 +78,8 @@ export default function NavBar() {
                 href={link.href}
                 className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   activeSection === link.href.slice(1)
-                    ? theme === 'dark'
-                      ? 'text-white bg-white/10 shadow-[0_0_10px_rgba(139,92,246,0.15)]'
-                      : 'text-gray-900 bg-gray-900/10 shadow-[0_0_10px_rgba(139,92,246,0.15)]'
-                    : `${mutedColor} hover:${textColor} hover:bg-${theme === 'dark' ? 'white' : 'black'}/5`
+                    ? 'text-pink-400 bg-pink-500/10 shadow-[0_0_10px_rgba(236,72,153,0.15)]'
+                    : `${mutedColor} hover:text-pink-400 hover:bg-pink-500/10`
                 }`}
               >
                 {link.label}
@@ -161,12 +162,10 @@ export default function NavBar() {
                 onClick={handleClick}
                 className={`block px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   activeSection === link.href.slice(1)
-                    ? theme === 'dark'
-                      ? 'text-white bg-white/10'
-                      : 'text-gray-900 bg-gray-900/10'
+                    ? 'text-pink-400 bg-pink-500/10'
                     : theme === 'dark'
-                      ? 'text-gray-400 hover:text-white hover:bg-white/5'
-                      : 'text-gray-500 hover:text-gray-900 hover:bg-gray-900/5'
+                      ? 'text-gray-400 hover:text-pink-400 hover:bg-pink-500/10'
+                      : 'text-gray-500 hover:text-pink-400 hover:bg-pink-500/10'
                 }`}
               >
                 {link.label}
