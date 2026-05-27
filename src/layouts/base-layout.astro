@@ -7,12 +7,12 @@ interface Props {
   description?: string;
 }
 
-const { title = 'David | Desarrollador Backend', description = 'Portfolio de David — Desarrollador Backend especializado en Astro, React y Tailwind CSS.' } = Astro.props;
+const { title = 'David | Desarrollador Web', description = 'Portfolio de David — Desarrollador Web Junior especializado en frontend y backend.' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://tu-dominio.com');
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/letra-d.png" />
@@ -29,10 +29,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://tu-domin
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <script is:inline>
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light') document.documentElement.classList.replace('dark', 'light');
+    </script>
   </head>
-  <body class="min-h-screen bg-gray-950 text-white antialiased">
+  <body class="min-h-screen antialiased">
     <NavBar client:load />
-    <main class="pt-[72px]">
+    <main class="pt-16">
       <slot />
     </main>
   </body>

@@ -1,57 +1,45 @@
 ---
 import BaseLayout from '../layouts/base-layout.astro';
-import GradientBlinds from '../components/GradientBlinds.tsx';
 import ProjectCard from '../components/ProjectCard.tsx';
 import ContactForm from '../components/ContactForm.tsx';
+import BorderGlow from '../components/BorderGlow.tsx';
 import { personal, skills, projects, contact } from '../data/portfolio';
 ---
 
 <BaseLayout title={`${personal.name} | ${personal.role}`}>
-  <div class="fixed inset-0 -z-10">
-    <GradientBlinds
-      client:load
-      gradientColors={['#0f0c29', '#302b63', '#24243e']}
-      angle={135}
-      noise={0.15}
-      blindCount={24}
-      spotlightRadius={0.6}
-      spotlightSoftness={0.8}
-      spotlightOpacity={0.5}
-      mirrorGradient={true}
-      distortAmount={0.15}
-      shineDirection="right"
-      mixBlendMode="normal"
-    />
-  </div>
-
-  <section id="inicio" class="min-h-screen flex items-center justify-center">
+  <section id="inicio" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="pointer-events-none absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-500/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-10 top-64 hidden h-52 w-52 rounded-full bg-cyan-400/10 blur-3xl lg:block"></div>
     <div class="text-center px-6">
-      <p class="text-blue-400 font-medium text-lg mb-3 tracking-wide animate-fade-in">Hola, soy</p>
-      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up">
-        {personal.name}
+      <div class="mb-6 flex flex-wrap justify-center gap-3">
+        <span class="badge">DAW recién titulado</span>
+        <span class="badge">Disponible junior</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-black leading-tight tracking-tight themed-heading">
+        Hola, soy <span class="bg-gradient-to-r from-violet-300 via-cyan-200 to-emerald-200 bg-clip-text text-transparent">{personal.name}</span>
       </h1>
-      <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
+      <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl themed-text">
         {personal.role}
       </p>
-      <p class="text-base text-gray-400 max-w-xl mx-auto mt-4 animate-fade-in-up animation-delay-400">
+      <p class="mt-4 max-w-xl mx-auto themed-muted">
         {personal.tagline}
       </p>
-      <div class="mt-10 flex justify-center gap-4 animate-fade-in-up animation-delay-600">
-        <a
-          href="#proyectos"
-          class="rounded-lg bg-blue-500 px-6 py-3 font-medium text-white transition-all duration-200 hover:bg-blue-400 hover:shadow-lg hover:shadow-blue-400/25"
-        >
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row justify-center">
+        <a href="#proyectos" class="btn-primary">
           Ver proyectos
         </a>
-        <a
-          href="#contacto"
-          class="rounded-lg border border-white/20 px-6 py-3 font-medium text-white transition-all duration-200 hover:border-white/40 hover:bg-white/5"
-        >
+        <a href="#contacto" class="btn-secondary">
           Contacto
+        </a>
+        <a href="/Currículum.pdf" download class="btn-secondary">
+          <svg class="w-4 h-4 inline -mt-0.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Descargar CV
         </a>
       </div>
       <div class="mt-16 animate-bounce">
-        <a href="#sobre-mi" class="text-gray-500 hover:text-white transition-colors duration-200" aria-label="Ir abajo">
+        <a href="#sobre-mi" class="themed-muted hover:themed-text transition-colors duration-200" aria-label="Ir abajo">
           <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
@@ -61,102 +49,102 @@ import { personal, skills, projects, contact } from '../data/portfolio';
   </section>
 
   <section id="sobre-mi" class="py-24">
-    <div class="mx-auto max-w-4xl px-6">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Sobre mí</h2>
-      <div class="grid md:grid-cols-2 gap-12 items-start">
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="text-sm font-bold uppercase tracking-widest text-cyan-300 mb-2">Sobre mí</p>
+      <h2 class="text-3xl md:text-5xl font-black themed-heading mb-6">Perfil junior, pero con ganas de aprender y aportar.</h2>
+      <div class="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div class="space-y-4">
           {personal.bio.map((paragraph) => (
-            <p class="text-gray-300 leading-relaxed">{paragraph}</p>
+            <p class="themed-text leading-relaxed">{paragraph}</p>
           ))}
           <div class="pt-4 flex gap-4">
-            <a href={contact.github} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="GitHub">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <a href={contact.github} target="_blank" rel="noopener noreferrer" class="themed-muted hover:themed-text transition-colors duration-200" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
             </a>
-            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="LinkedIn">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" class="themed-muted hover:themed-text transition-colors duration-200" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
-            <a href={`mailto:${contact.email}`} class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="Email">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href={`mailto:${contact.email}`} class="themed-muted hover:themed-text transition-colors duration-200" aria-label="Email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </a>
           </div>
         </div>
-        <div>
-          <h3 class="text-lg font-semibold text-white mb-4">Tecnologías</h3>
-          <div class="flex flex-wrap gap-2">
-            {skills.map((skill) => (
-              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-gray-300 transition-all duration-200 hover:border-blue-400/40 hover:text-white">
-                {skill.name}
-              </span>
-            ))}
-          </div>
+        <div class="grid gap-4">
+          <BorderGlow client:visible>
+            <div class="p-6">
+              <h3 class="text-xl font-black themed-heading mb-3">Lo que busco</h3>
+              <p class="themed-text leading-relaxed">Una primera oportunidad como desarrollador web junior, especialmente en entornos backend, Node.js, APIs REST o proyectos con despliegue real.</p>
+            </div>
+          </BorderGlow>
+          <BorderGlow client:visible>
+            <div class="p-6">
+              <h3 class="text-xl font-black themed-heading mb-3">Cómo trabajo</h3>
+              <p class="themed-text leading-relaxed">Me gusta entender bien el problema, dividirlo en partes pequeñas, documentar lo que hago y dejar el código preparado para que otro pueda continuar.</p>
+            </div>
+          </BorderGlow>
+          <BorderGlow client:visible>
+            <div class="p-6">
+              <h3 class="text-xl font-black themed-heading mb-4">Tecnologías</h3>
+              <div class="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span class="skill-tag">
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </BorderGlow>
         </div>
       </div>
     </div>
   </section>
 
   <section id="proyectos" class="py-24">
-    <div class="mx-auto max-w-6xl px-6">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-12 text-center">Proyectos</h2>
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="text-sm font-bold uppercase tracking-widest text-cyan-300 mb-2">Proyectos</p>
+      <h2 class="text-3xl md:text-5xl font-black themed-heading mb-6">Proyectos que muestran lo que sé hacer.</h2>
+      <p class="themed-muted mb-12 max-w-2xl">Cada proyecto demuestra un lado distinto de mi formacion — desde APIs hasta interfaces, pasando por despliegue.</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <ProjectCard client:visible project={project} />
+        {projects.map((project, i) => (
+          <ProjectCard client:visible project={project} index={i + 1} />
         ))}
       </div>
     </div>
   </section>
 
   <section id="contacto" class="py-24">
-    <div class="mx-auto max-w-2xl px-6 text-center">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Contacto</h2>
-      <p class="text-gray-400 mb-10">
-        ¿Tienes un proyecto en mente? Escríbeme y hablemos.
-      </p>
-      <ContactForm client:visible />
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="contact-card relative overflow-hidden rounded-3xl p-8 sm:p-12">
+        <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-violet-500/15 blur-3xl"></div>
+        <div class="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-widest text-cyan-300 mb-2">Contacto</p>
+            <h2 class="text-3xl md:text-4xl font-black themed-heading mb-4">Estoy abierto a oportunidades junior.</h2>
+            <p class="themed-muted">Si buscas un perfil con ganas de aprender, base tecnica en desarrollo web y mucho interes por backend y despliegue, escribeme.</p>
+          </div>
+          <ContactForm client:only="react" />
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="border-t border-white/10 py-8">
-    <div class="mx-auto max-w-6xl px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} {personal.name}. Todos los derechos reservados.
+  <footer class="border-t themed-border py-8">
+    <div class="mx-auto max-w-5xl px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm themed-muted">
+        &copy; {new Date().getFullYear()} {personal.name}. Hecho con Astro y Tailwind CSS.
       </p>
       <div class="flex gap-4">
-        <a href={contact.github} target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors duration-200 text-sm">GitHub</a>
-        <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors duration-200 text-sm">LinkedIn</a>
-        <a href={`mailto:${contact.email}`} class="text-gray-500 hover:text-white transition-colors duration-200 text-sm">Email</a>
+        <a href={contact.github} target="_blank" rel="noopener noreferrer" class="themed-muted hover:themed-text transition-colors duration-200 text-sm">GitHub</a>
+        <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" class="themed-muted hover:themed-text transition-colors duration-200 text-sm">LinkedIn</a>
+        <a href={`mailto:${contact.email}`} class="themed-muted hover:themed-text transition-colors duration-200 text-sm">Email</a>
       </div>
     </div>
   </footer>
 </BaseLayout>
-
-<style>
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes fade-in-up {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out both;
-  }
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out both;
-  }
-  .animation-delay-200 {
-    animation-delay: 0.2s;
-  }
-  .animation-delay-400 {
-    animation-delay: 0.4s;
-  }
-  .animation-delay-600 {
-    animation-delay: 0.6s;
-  }
-</style>

@@ -1,27 +1,27 @@
 export const personal = {
   name: 'David',
-  role: 'Desarrollador Backend',
-  tagline: 'Especializado en construir APIs robustas, servicios escalables y soluciones del lado del servidor con Astro, React y Tailwind CSS.',
+  role: 'Desarrollador Web Junior',
+  tagline: 'Graduado en Desarrollo de Aplicaciones Web. Construyo APIs limpias, interfaces funcionales y soluciones que aprenden conmigo.',
   bio: [
-    'Soy un desarrollador backend con pasión por crear soluciones eficientes y escalables. Me especializo en el desarrollo del lado del servidor, diseñando APIs y arquitecturas que soportan aplicaciones modernas.',
-    'Mi experiencia abarca desde bases de datos hasta despliegue en la nube, siempre buscando escribir código limpio y mantenible. Disfruto resolver problemas complejos y optimizar el rendimiento de las aplicaciones.',
-    'Cuando no estoy programando, sigo aprendiendo nuevas tecnologías y contribuyendo a proyectos open source.',
+    'Soy desarrollador web con el Grado Superior en Desarrollo de Aplicaciones Web. Disfruto construyendo aplicaciones completas —desde la API hasta la interfaz— y me preocupo por escribir código limpio y mantenible.',
+    'Durante mis estudios he trabajado con tecnologias del lado del servidor y del cliente, montando proyectos con Node.js, React y bases de datos SQL. Siempre estoy aprendiendo algo nuevo y buscando retos que me hagan mejorar.',
+    'Cuando no estoy programando, sigo formandome en nuevas tecnologias y colaborando en proyectos open source.',
   ],
 };
 
 export const skills = [
-  { name: 'Astro', category: 'framework' },
-  { name: 'React', category: 'framework' },
-  { name: 'Tailwind CSS', category: 'styling' },
+  { name: 'JavaScript', category: 'language' },
   { name: 'TypeScript', category: 'language' },
+  { name: 'React', category: 'framework' },
   { name: 'Node.js', category: 'runtime' },
-  { name: 'Python', category: 'language' },
-  { name: 'PostgreSQL', category: 'database' },
-  { name: 'Docker', category: 'devops' },
+  { name: 'HTML / CSS', category: 'frontend' },
+  { name: 'Tailwind CSS', category: 'styling' },
+  { name: 'SQL', category: 'database' },
   { name: 'Git', category: 'tool' },
-  { name: 'Cloudflare Workers', category: 'platform' },
   { name: 'REST APIs', category: 'skill' },
+  { name: 'Docker', category: 'devops' },
   { name: 'Linux', category: 'tool' },
+  { name: 'Python', category: 'language' },
 ];
 
 export type Project = {
@@ -35,37 +35,30 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: 'Proyecto Alpha',
-    description: 'API REST de alto rendimiento para gestión de datos en tiempo real. Arquitectura modular con autenticación y caché distribuida.',
-    technologies: ['Node.js', 'PostgreSQL', 'Docker'],
-    demoUrl: '#',
-    repoUrl: '#',
+    title: "MyMusic's",
+    description: 'Plataforma web tipo SoundCloud para subir, escuchar y compartir musica. Panel de administracion, gestion de usuarios, canciones, playlists, comentarios, likes y reportes.',
+    technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
+    demoUrl: 'https://a1.dawbaza.es/',
+    repoUrl: 'https://github.com/davidarrcal/mymusics-JS-PHP-api-css-bootstrap',
   },
   {
-    title: 'Proyecto Beta',
-    description: 'Dashboard interactivo con visualización de datos en tiempo real y panel de administración con control de roles.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    demoUrl: '#',
-    repoUrl: '#',
-  },
-  {
-    title: 'Proyecto Gamma',
-    description: 'Sitio web estático de alto rendimiento con generación incremental y despliegue en edge.',
-    technologies: ['Astro', 'Cloudflare Workers', 'Git'],
-    demoUrl: '#',
-    repoUrl: '#',
+    title: 'Portfolio Personal',
+    description: 'Portfolio personal con Astro, React y Tailwind CSS. Efecto interactivo BorderGlow, formulario de contacto funcional, modo claro/oscuro y despliegue en Cloudflare Workers.',
+    technologies: ['Astro', 'React', 'Tailwind CSS', 'Cloudflare Workers'],
+    demoUrl: 'https://david-porfolio.davidarrcal.workers.dev/',
+    repoUrl: 'https://github.com/davidarrcal/david-porfolio',
   },
 ];
 
 export const contact = {
-  email: 'tu-email@ejemplo.com',
-  github: 'https://github.com/tu-usuario',
-  linkedin: 'https://linkedin.com/in/tu-usuario',
+  email: 'davidarrcal@gmail.com',
+  github: 'https://github.com/davidarrcal',
+  linkedin: 'https://www.linkedin.com/in/davidarredondocalder%C3%B2n/',
 };
 
 export const seo = {
-  title: 'David | Desarrollador Backend',
-  description: 'Portfolio de David — Desarrollador Backend especializado en Astro, React y Tailwind CSS. APIs robustas, servicios escalables y soluciones del lado del servidor.',
+  title: 'David | Desarrollador Web Junior',
+  description: 'Portfolio de David — Desarrollador Web Junior graduado en DAW. React, Node.js, TypeScript y buenas practicas.',
   ogImage: '/og-image.png',
-  url: 'https://tu-dominio.com',
+  url: 'https://david-porfolio.davidarrcal.workers.dev/',
 };
