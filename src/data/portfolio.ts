@@ -49,7 +49,6 @@ export const projects: Project[] = [
     title: 'Portfolio Personal',
     description: 'Portfolio personal con Astro, React y Tailwind CSS. Efecto interactivo BorderGlow, formulario de contacto funcional, modo claro/oscuro y despliegue en Cloudflare Workers.',
     technologies: ['Astro', 'React', 'Tailwind CSS', 'Cloudflare Workers'],
-    demoUrl: 'https://david-porfolio.davidarrcal.workers.dev/',
     repoUrl: 'https://github.com/davidarrcal/david-porfolio',
   },
 ];
