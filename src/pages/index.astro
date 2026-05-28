@@ -58,7 +58,7 @@ import { personal, skills, projects, contact } from '../data/portfolio';
   <div class="mx-auto max-w-5xl px-6">
     <p class="text-sm font-bold uppercase tracking-widest text-pink-400 mb-2">Sobre mí</p>
     <h2 class="text-3xl md:text-5xl font-black themed-heading mb-6 bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent">
-      Perfil junior con ganas de aprender y aportar.
+      Perfil Junior con actitud y base técnica.
     </h2>
     
     <!-- Grid de 2 columnas para biografía + (lo que busco / cómo trabajo) -->
@@ -97,7 +97,7 @@ import { personal, skills, projects, contact } from '../data/portfolio';
           <h3 class="text-xl font-black themed-heading mb-4">Tecnologías</h3>
           <div class="flex flex-wrap gap-2">
             {skills.map((skill) => (
-              <span class="skill-tag">
+              <span class="project-tech-tag">
                 {skill.name}
               </span>
             ))}
@@ -129,8 +129,8 @@ import { personal, skills, projects, contact } from '../data/portfolio';
         <div class="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p class="text-sm font-bold uppercase tracking-widest text-pink-400 mb-2">Contacto</p>
-            <h2 class="text-3xl md:text-4xl font-black themed-heading mb-4">Estoy abierto a oportunidades junior.</h2>
-            <p class="themed-muted">Si buscas un perfil con ganas de aprender, base tecnica en desarrollo web y mucho interes por backend y despliegue, escribeme.</p>
+            <h2 class="text-3xl md:text-4xl font-black themed-heading mb-4">¿Buscas a alguien con ganas de crecer y aportar? </h2>
+            <p class="themed-muted">Tengo la base técnica, el interés por backend y despliegue, y muchas ganas de demostrar lo que valgo. Escríbeme y hablemos."</p>
           </div>
           <ContactForm client:only="react" />
         </div>

@@ -181,3 +181,29 @@ html.light input::placeholder,
 html.light textarea::placeholder {
   color: #9ca3af;
 }
+html.light .glass h3 {
+  color: #111827;
+}
+
+html.light .glass p {
+  color: #374151;
+}
+
+html.light .project-tech-tag {
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #5b21b6;
+}
+
+html.dark .project-tech-tag {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid transparent;
+  color: #c4b5fd;
+}
+
+.project-tech-tag {
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
