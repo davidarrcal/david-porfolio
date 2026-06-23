@@ -46,10 +46,11 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/davidarrcal/mymusics-JS-PHP-api-css-bootstrap',
   },
   {
-    title: 'Portfolio Personal',
-    description: 'Portfolio personal con Astro, React y Tailwind CSS. Efecto interactivo BorderGlow, formulario de contacto funcional, modo claro/oscuro y despliegue en Cloudflare Workers.',
-    technologies: ['Astro', 'React', 'Tailwind CSS', 'Cloudflare Workers'],
-    repoUrl: 'https://github.com/davidarrcal/david-porfolio',
+    title: 'Olivas',
+    description: 'Aplicacion web de gestion de olivar. Monorepo con frontend en React y API REST en Express con Prisma, autenticacion JWT y despliegue con Docker.',
+    technologies: ['React', 'Express', 'Prisma', 'JWT', 'Docker'],
+    demoUrl: 'https://olivas-app-web.vercel.app/login',
+    repoUrl: 'https://github.com/davidarrcal/Olivas-app',
   },
 ];
 
