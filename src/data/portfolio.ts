@@ -57,7 +57,7 @@ export const projects: Project[] = [
     description: 'Aplicacion web de gestion de restaurante con modulo de informes y analisis de datos del negocio. Monorepo con frontend en Next.js, API en NestJS y base de datos con Prisma. Autenticacion JWT y despliegue en Vercel.',
     technologies: ['Next.js', 'React', 'NestJS', 'Prisma', 'TypeScript', 'Tailwind CSS', 'JWT'],
     demoUrl: 'https://gesti-n-restaurante-g0jmh0iut-bones2.vercel.app/informes',
-    repoUrl: 'https://github.com/davidarrcal/Gesti-n-restaurante',
+    repoUrl: 'https://gesti-n-restaurante-web.vercel.app/',
   },
 ];
 
