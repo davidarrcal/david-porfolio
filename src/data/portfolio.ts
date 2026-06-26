@@ -52,6 +52,12 @@ export const projects: Project[] = [
     demoUrl: 'https://olivas-app-web.vercel.app/login',
     repoUrl: 'https://github.com/davidarrcal/Olivas-app',
   },
+  {
+    title: 'Gestión Restaurante',
+    description: 'Aplicacion web de gestion de restaurante con modulo de informes y analisis de datos del negocio.',
+    technologies: [],
+    demoUrl: 'https://gesti-n-restaurante-g0jmh0iut-bones2.vercel.app/informes',
+  },
 ];
 
 export const contact = {
