@@ -28,17 +28,18 @@ export default function ProjectCard({ project, index }: Props) {
           </span>
           ))}
         </div>
-        <div className="flex gap-3">
-          {project.demoUrl && (
+        <div className="flex flex-wrap gap-3">
+          {project.demoUrls?.map((url, i) => (
             <a
-              href={project.demoUrl}
+              key={url}
+              href={url}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary !text-sm !px-4 !py-2 !rounded-xl"
             >
-              Demo ↗
+              Demo {project.demoUrls!.length > 1 ? i + 1 : ''} ↗
             </a>
-          )}
+          ))}
           {project.repoUrl && (
             <a
               href={project.repoUrl}

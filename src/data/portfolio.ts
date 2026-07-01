@@ -32,7 +32,7 @@ export type Project = {
   title: string;
   description: string;
   technologies: string[];
-  demoUrl?: string;
+  demoUrls?: string[];
   repoUrl?: string;
   image?: string;
 };
@@ -42,21 +42,24 @@ export const projects: Project[] = [
     title: "MyMusic's",
     description: 'Plataforma web tipo SoundCloud para subir, escuchar y compartir musica. Panel de administracion, gestion de usuarios, canciones, playlists, comentarios, likes y reportes.',
     technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
-    demoUrl: 'https://a1.dawbaza.es/',
+    demoUrls: ['https://a1.dawbaza.es/'],
     repoUrl: 'https://github.com/davidarrcal/mymusics-JS-PHP-api-css-bootstrap',
   },
   {
     title: 'Olivas',
     description: 'Aplicacion web de gestion de olivar. Monorepo con frontend en React y API REST en Express con Prisma, autenticacion JWT y despliegue con Docker.',
     technologies: ['React', 'Express', 'Prisma', 'JWT', 'Docker'],
-    demoUrl: 'https://olivas-app-web.vercel.app/login',
+    demoUrls: ['https://olivas-app-web.vercel.app/login'],
     repoUrl: 'https://github.com/davidarrcal/Olivas-app',
   },
   {
     title: 'Gestión Restaurante',
     description: 'Aplicacion web de gestion de restaurante con modulo de informes y analisis de datos del negocio. Monorepo con frontend en Next.js, API en NestJS y base de datos con Prisma. Autenticacion JWT y despliegue en Vercel.',
     technologies: ['Next.js', 'React', 'NestJS', 'Prisma', 'TypeScript', 'Tailwind CSS', 'JWT'],
-    demoUrl: 'https://gesti-n-restaurante-g0jmh0iut-bones2.vercel.app/informes',
+    demoUrls: [
+      'https://gesti-n-restaurante-g0jmh0iut-bones2.vercel.app/informes',
+      'https://gesti-n-restaurante-web.vercel.app/login',
+    ],
     repoUrl: 'https://gesti-n-restaurante-web.vercel.app/',
   },
 ];
